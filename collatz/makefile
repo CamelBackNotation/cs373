@@ -30,6 +30,8 @@ RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py
 	-pylint RunCollatz.py
 	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	diff RunCollatz.tmp RunCollatz.out
+	python3 -m cProfile RunCollatz.py < RunCollatz.in > RunCollatz.tmp
+	cat RunCollatz.tmp
 
 TestCollatz.tmp: TestCollatz.py
 	-pylint Collatz.py
