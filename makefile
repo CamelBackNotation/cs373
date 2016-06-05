@@ -2,6 +2,8 @@ clean:
 	cd examples; make clean
 	@echo
 	cd exercises; make clean
+	@echo
+	cd collatz; make clean
 
 config:
 	git config -l
@@ -31,6 +33,15 @@ pull:
     --include "IsPrime1T.py"                 \
     --exclude "*"                            \
     ../../exercises/python/ exercises
+	@rsync -r -t -u -v --delete              \
+    --include "Collatz.py"                   \
+    --include "RunCollatz.in"                \
+    --include "RunCollatz.py"                \
+    --include "RunCollatz.out"               \
+    --include "TestCollatz.py"               \
+    --include "TestCollatz.out"              \
+    --exclude "*"                            \
+    ../../projects/python/collatz/ collatz
 
 push:
 	make clean
@@ -38,6 +49,7 @@ push:
 	git add .travis.yml
 	git add examples
 	git add exercises
+	git add collatz
 	git add makefile
 	git commit -m "another commit"
 	git push
@@ -54,3 +66,5 @@ test:
 	cd examples; make test
 	@echo
 	cd exercises; make test
+	@echo
+	cd collatz; make test
