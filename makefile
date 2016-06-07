@@ -17,10 +17,14 @@ init:
 	git push -u origin master
 
 pull:
+	make clean
+	@echo
 	git pull
 	git status
 
 push:
+	make clean
+	@echo
 	git add .travis.yml
 	git add examples
 	git add exercises
@@ -31,6 +35,8 @@ push:
 	git status
 
 status:
+	make clean
+	@echo
 	git branch
 	git remote -v
 	git status
