@@ -20,9 +20,7 @@ endif
 
 clean:
 	rm -f  *.pyc
+	rm -f  .pylintrc
 	rm -rf __pycache__
-
-scrub:
-	rm -f .pylintrc
 
 test: $(FILES:=.pyx)

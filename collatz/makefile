@@ -69,6 +69,7 @@ check:
 
 clean:
 	rm -f  .coverage
+	rm -f  .pylintrc
 	rm -f  *.pyc
 	rm -f  RunCollatz.tmp
 	rm -f  TestCollatz.tmp
