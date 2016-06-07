@@ -71,9 +71,12 @@ clean:
 	rm -f  .coverage
 	rm -f  .pylintrc
 	rm -f  *.pyc
+	rm -f  Collatz.html
+	rm -f  Collatz.log
 	rm -f  RunCollatz.tmp
 	rm -f  TestCollatz.tmp
 	rm -rf __pycache__
+	rm -rf collatz-tests
 
 config:
 	git config -l
@@ -82,12 +85,6 @@ format:
 	autopep8 -i Collatz.py
 	autopep8 -i RunCollatz.py
 	autopep8 -i TestCollatz.py
-
-scrub:
-	make clean
-	rm -f  Collatz.html
-	rm -f  Collatz.log
-	rm -rf collatz-tests
 
 status:
 	make clean
