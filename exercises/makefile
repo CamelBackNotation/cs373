@@ -22,8 +22,9 @@ RMSET.pyx: RMSET.py
 	$(COVERAGE) report -m
 
 clean:
-	rm -f  *.pyc
+	rm -f  .coverage
 	rm -f  .pylintrc
+	rm -f  *.pyc
 	rm -rf __pycache__
 
 test: $(FILES:=.pyx)
