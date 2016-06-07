@@ -69,6 +69,8 @@ sync:
     ../../projects/python/collatz/ collatz
 
 test:
+	make clean
+	@echo
 	cd examples; make test
 	@echo
 	cd exercises; make test
