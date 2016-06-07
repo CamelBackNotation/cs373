@@ -82,10 +82,6 @@ format:
 	autopep8 -i RunCollatz.py
 	autopep8 -i TestCollatz.py
 
-pull:
-	git pull
-	git status
-
 scrub:
 	make clean
 	rm -f  Collatz.html

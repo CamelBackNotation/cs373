@@ -22,10 +22,6 @@ clean:
 	rm -f  *.pyc
 	rm -rf __pycache__
 
-pull:
-	git pull
-	git status
-
 scrub:
 	rm -f .pylintrc
 
