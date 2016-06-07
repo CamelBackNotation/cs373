@@ -17,6 +17,25 @@ init:
 	git push -u origin master
 
 pull:
+	git pull
+	git status
+
+push:
+	git add .travis.yml
+	git add examples
+	git add exercises
+	git add collatz
+	git add makefile
+	git commit -m "another commit"
+	git push
+	git status
+
+status:
+	git branch
+	git remote -v
+	git status
+
+sync:
 	@rsync -r -t -u -v --delete              \
     --include "Hello.py"                     \
     --include "Assertions.py"                \
@@ -42,21 +61,6 @@ pull:
     --include "TestCollatz.out"              \
     --exclude "*"                            \
     ../../projects/python/collatz/ collatz
-
-push:
-	git add .travis.yml
-	git add examples
-	git add exercises
-	git add collatz
-	git add makefile
-	git commit -m "another commit"
-	git push
-	git status
-
-status:
-	git branch
-	git remote -v
-	git status
 
 test:
 	cd examples; make test

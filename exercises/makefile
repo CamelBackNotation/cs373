@@ -9,11 +9,6 @@ else
 	PYLINT   := pylint3
 endif
 
-%.pyx: %.py
-	-$(PYLINT) $<
-	$(COVERAGE) run --branch $<
-	$(COVERAGE) report -m
-
 .pylintrc:
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,invalid-name,locally-disabled,pointless-string-statement --reports=n --generate-rcfile > $@
 
@@ -21,12 +16,21 @@ RMSET.pyx: RMSET.py
 	-$(PYLINT) $<
 	./$<
 
+%.pyx: %.py .pylintrc
+	-$(PYLINT) $<
+	$(COVERAGE) run --branch $<
+	$(COVERAGE) report -m
+
 clean:
 	rm -f  .coverage
 	rm -f  *.pyc
 	rm -rf __pycache__
 
+pull:
+	git pull
+	git status
+
 scrub:
 	rm -f .pylintrc
 
-test: .pylintrc $(FILES:=.pyx)
+test: $(FILES:=.pyx)
