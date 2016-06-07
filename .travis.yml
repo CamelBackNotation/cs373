@@ -22,6 +22,4 @@ before_script:
 script:
     - date
     - ls -al
-    - (cd examples;  make test)
-    - (cd exercises; make test)
-    - (cd collatz;   make test)
+    - make test

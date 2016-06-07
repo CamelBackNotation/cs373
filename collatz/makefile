@@ -13,8 +13,16 @@ FILES :=                              \
 #    collatz-tests/EID-TestCollatz.out \
 #    collatz-tests/EID-TestCollatz.py  \
 
+ifeq ($(CI), true)
+    COVERAGE := coverage
+    PYLINT   := pylint
+else
+    COVERAGE := coverage-3.5
+	PYLINT   := pylint3
+endif
+
 .pylintrc:
-	pylint --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 collatz-tests:
 	git clone https://github.com/cs373-summer-2016/collatz-tests.git
@@ -26,18 +34,18 @@ Collatz.log:
 	git log > Collatz.log
 
 RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py
-	-pylint Collatz.py
-	-pylint RunCollatz.py
+	-$(PYLINT) Collatz.py
+	-$(PYLINT) RunCollatz.py
 	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	diff RunCollatz.tmp RunCollatz.out
 	python3 -m cProfile RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	cat RunCollatz.tmp
 
 TestCollatz.tmp: TestCollatz.py
-	-pylint Collatz.py
-	-pylint TestCollatz.py
-	coverage3 run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
-	coverage3 report -m                      >> TestCollatz.tmp
+	-$(PYLINT) Collatz.py
+	-$(PYLINT) TestCollatz.py
+	$(COVERAGE) run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
+	$(COVERAGE) report -m                      >> TestCollatz.tmp
 	cat TestCollatz.tmp
 
 check:
