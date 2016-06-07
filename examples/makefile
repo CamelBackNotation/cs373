@@ -11,7 +11,7 @@ else
 	PYLINT := pylint3
 endif
 
-%.pyx: %.py
+%.pyx: %.py .pylintrc
 	-$(PYLINT) $<
 	./$<
 
@@ -25,4 +25,4 @@ clean:
 scrub:
 	rm -f .pylintrc
 
-test: .pylintrc $(FILES:=.pyx)
+test: $(FILES:=.pyx)
