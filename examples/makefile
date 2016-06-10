@@ -3,7 +3,13 @@ FILES :=              \
     UnitTests3        \
     Coverage1         \
     Coverage2         \
-    Coverage3
+    Coverage3         \
+    Exceptions        \
+    Types             \
+    Operators         \
+    Variables         \
+    Cache             \
+    Copy
 
 ifeq ($(CI), true)
     PYLINT := pylint

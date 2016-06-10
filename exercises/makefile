@@ -1,5 +1,6 @@
 FILES :=           \
-    IsPrime1T
+    IsPrime1T      \
+    IsPrime2T
 
 ifeq ($(CI), true)
     COVERAGE := coverage
