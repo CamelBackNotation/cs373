@@ -51,9 +51,12 @@ sync:
     --include "Coverage1.py"                 \
     --include "Coverage2.py"                 \
     --include "Coverage3.py"                 \
+    --include "Exceptions.py"                \
     --include "Types.py"                     \
     --include "Operators.py"                 \
     --include "Variables.py"                 \
+    --include "Cache.py"                     \
+    --include "Copy.py"                      \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
