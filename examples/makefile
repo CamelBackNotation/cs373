@@ -9,7 +9,8 @@ FILES :=              \
     Operators         \
     Variables         \
     Cache             \
-    Copy
+    Copy              \
+    Iteration
 
 ifeq ($(CI), true)
     PYLINT := pylint

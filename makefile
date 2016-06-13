@@ -57,6 +57,7 @@ sync:
     --include "Variables.py"                 \
     --include "Cache.py"                     \
     --include "Copy.py"                      \
+    --include "Iteration.py"                 \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
