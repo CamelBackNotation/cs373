@@ -65,6 +65,7 @@ sync:
     --include "IsPrime1T.py"                 \
     --include "IsPrime2.py"                  \
     --include "IsPrime2T.py"                 \
+    --include "Factorial.py"                 \
     --include "FactorialT.py"                \
     --include "ReduceT.py"                   \
     --exclude "*"                            \
