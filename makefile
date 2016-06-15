@@ -58,6 +58,7 @@ sync:
     --include "Cache.py"                     \
     --include "Copy.py"                      \
     --include "Iteration.py"                 \
+    --include "Yield.py"                     \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -69,6 +70,8 @@ sync:
     --include "FactorialT.py"                \
     --include "Reduce.py"                    \
     --include "ReduceT.py"                   \
+    --include "RMSET.py"                     \
+    --include "MapT.py"                      \
     --exclude "*"                            \
     ../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \

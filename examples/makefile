@@ -10,7 +10,8 @@ FILES :=              \
     Variables         \
     Cache             \
     Copy              \
-    Iteration
+    Iteration         \
+    Yield
 
 ifeq ($(CI), true)
     PYLINT := pylint
