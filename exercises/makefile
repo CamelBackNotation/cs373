@@ -1,6 +1,8 @@
 FILES :=           \
     IsPrime1T      \
-    IsPrime2T
+    IsPrime2T      \
+    FactorialT     \
+    ReduceT
 
 ifeq ($(CI), true)
     COVERAGE := coverage

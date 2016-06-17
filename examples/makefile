@@ -11,7 +11,8 @@ FILES :=              \
     Cache             \
     Copy              \
     Iteration         \
-    Yield
+    Yield             \
+    Comprehensions
 
 ifeq ($(CI), true)
     PYLINT := pylint

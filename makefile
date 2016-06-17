@@ -59,6 +59,7 @@ sync:
     --include "Copy.py"                      \
     --include "Iteration.py"                 \
     --include "Yield.py"                     \
+    --include "Comprehensions.py"            \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
