@@ -60,6 +60,7 @@ sync:
     --include "Iteration.py"                 \
     --include "Yield.py"                     \
     --include "Comprehensions.py"            \
+    --include "Iterables.py"                 \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -71,6 +72,7 @@ sync:
     --include "FactorialT.py"                \
     --include "Reduce.py"                    \
     --include "ReduceT.py"                   \
+    --include "RMSE.py"                      \
     --include "RMSET.py"                     \
     --include "MapT.py"                      \
     --exclude "*"                            \

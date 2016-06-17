@@ -12,7 +12,8 @@ FILES :=              \
     Copy              \
     Iteration         \
     Yield             \
-    Comprehensions
+    Comprehensions    \
+    Iterables
 
 ifeq ($(CI), true)
     PYLINT := pylint
