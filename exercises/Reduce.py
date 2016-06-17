@@ -8,7 +8,8 @@
 
 def reduce_for_range (bf, a, v) :
     for i in range(len(a)) :
-        v = bf(v, a[i])
+        w = a[i]
+        v = bf(v, w)
     return v
 
 def reduce_for (bf, a, v) :
