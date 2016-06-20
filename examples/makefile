@@ -13,7 +13,13 @@ FILES :=              \
     Iteration         \
     Yield             \
     Comprehensions    \
-    Iterables
+    Lambdas           \
+    Iterables         \
+    FunctionKeywords  \
+    FunctionDefaults  \
+    FunctionUnpacking \
+    FunctionTuple     \
+    FunctionDict
 
 ifeq ($(CI), true)
     PYLINT := pylint
