@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-#pylint: disable = redefined-variable-type
+# pylint: disable = bad-whitespace
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = redefined-variable-type
 
 # ------------
 # Operators.py
@@ -194,6 +197,12 @@ j = i - j
 assert i == 22
 assert j == 10
 i -= j
+assert i == 12
+assert j == 10
+
+i = 10
+j = 12
+i, j = j, i
 assert i == 12
 assert j == 10
 

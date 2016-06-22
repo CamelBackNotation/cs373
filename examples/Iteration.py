@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-#pylint: disable = redefined-variable-type
+# pylint: disable = bad-whitespace
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = redefined-variable-type
 
 # -------------
 # Indexables.py

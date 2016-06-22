@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# pylint: disable = missing-docstring
+# pylint: disable = pointless-string-statement
+
 # --------
 # Hello.py
 # --------

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-#pylint: disable = dangerous-default-value
+# pylint: disable = bad-whitespace
+# pylint: disable = dangerous-default-value
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
 
 # -------------------
 # FunctionDefaults.py

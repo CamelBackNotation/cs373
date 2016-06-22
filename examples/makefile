@@ -19,7 +19,8 @@ FILES :=              \
     FunctionDefaults  \
     FunctionUnpacking \
     FunctionTuple     \
-    FunctionDict
+    FunctionDict      \
+    Callables
 
 ifeq ($(CI), true)
     PYLINT := pylint
@@ -28,15 +29,15 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --disable=bad-whitespace,missing-docstring,invalid-name,locally-disabled,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
 %.pyx: %.py .pylintrc
 	-$(PYLINT) $<
 	./$<
 
 clean:
-	rm -f  *.pyc
 	rm -f  .pylintrc
+	rm -f  *.pyc
 	rm -rf __pycache__
 
 test: $(FILES:=.pyx)

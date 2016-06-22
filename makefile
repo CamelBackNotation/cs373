@@ -68,6 +68,7 @@ sync:
     --include "FunctionUnpacking.py"         \
     --include "FunctionTuple.py"             \
     --include "FunctionDict.py"              \
+    --include "Callables.py"                 \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -81,7 +82,10 @@ sync:
     --include "ReduceT.py"                   \
     --include "RMSE.py"                      \
     --include "RMSET.py"                     \
+    --include "Map.py"                       \
     --include "MapT.py"                      \
+    --include "RangeIteratorT.py"            \
+    --include "RangeT.py"                    \
     --exclude "*"                            \
     ../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \

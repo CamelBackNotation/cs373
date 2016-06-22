@@ -22,7 +22,7 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
 collatz-tests:
 	git clone https://github.com/cs373-summer-2016/collatz-tests.git
@@ -33,7 +33,7 @@ Collatz.html: Collatz.py
 Collatz.log:
 	git log > Collatz.log
 
-RunCollatz.tmp: .pylintrc RunCollatz.in RunCollatz.out RunCollatz.py
+RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py .pylintrc
 	-$(PYLINT) Collatz.py
 	-$(PYLINT) RunCollatz.py
 	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
@@ -41,7 +41,7 @@ RunCollatz.tmp: .pylintrc RunCollatz.in RunCollatz.out RunCollatz.py
 	python3 -m cProfile RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	cat RunCollatz.tmp
 
-TestCollatz.tmp: .pylintrc TestCollatz.py
+TestCollatz.tmp: TestCollatz.py .pylintrc
 	-$(PYLINT) Collatz.py
 	-$(PYLINT) TestCollatz.py
 	$(COVERAGE) run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1

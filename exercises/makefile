@@ -3,7 +3,8 @@ FILES :=           \
     IsPrime2T      \
     FactorialT     \
     ReduceT        \
-    RMSET
+    RMSET          \
+    Map
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -14,9 +15,9 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --disable=bad-whitespace,missing-docstring,invalid-name,locally-disabled,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
-RMSET.pyx: RMSET.py
+RMSET.pyx: RMSET.py .pylintrc
 	-$(PYLINT) $<
 	./$<
 

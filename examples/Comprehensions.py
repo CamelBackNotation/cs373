@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 
-#pylint: disable = bad-builtin, cell-var-from-loop, no-name-in-module, redefined-variable-type, too-few-public-methods
+# pylint: disable = bad-builtin
+# pylint: disable = bad-whitespace
+# pylint: disable = cell-var-from-loop
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = no-name-in-module
+# pylint: disable = redefined-variable-type
 
 # -------------
 # Indexables.py

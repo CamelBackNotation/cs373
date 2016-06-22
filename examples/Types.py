@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 
-#pylint: disable = function-redefined, redefined-outer-name, too-few-public-methods
+# pylint: disable = bad-whitespace
+# pylint: disable = function-redefined
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = redefined-outer-name
+# pylint: disable = redefined-variable-type
+# pylint: disable = too-few-public-methods
 
 # --------
 # Types.py
@@ -23,7 +29,8 @@ assert isinstance(int, type)
 assert issubclass(int, int)
 assert issubclass(int, object)
 
-assert issubclass(bool, int)
+assert     issubclass(bool, int)
+assert not issubclass(int,  bool)
 
 f = 2.3
 assert isinstance(f,     float)
@@ -82,6 +89,12 @@ assert issubclass(dict, object)
 
 def f (v) :
     return v + 1
+assert isinstance(f,            FunctionType)
+assert isinstance(FunctionType, type)
+assert issubclass(FunctionType, FunctionType)
+assert issubclass(FunctionType, object)
+
+f = lambda v : v + 1
 assert isinstance(f,            FunctionType)
 assert isinstance(FunctionType, type)
 assert issubclass(FunctionType, FunctionType)
