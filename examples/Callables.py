@@ -2,72 +2,108 @@
 
 # pylint: disable = bad-builtin
 # pylint: disable = bad-whitespace
+# pylint: disable = function-redefined
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
 # pylint: disable = no-name-in-module
 # pylint: disable = too-few-public-methods
+# pylint: disable = redefined-outer-name
+# pylint: disable = redefined-variable-type
 
 # ------------
 # Callables.py
 # ------------
 
-from types import FunctionType, LambdaType, MethodType
+from functools import reduce
+from types     import FunctionType, MethodType
 
 print("Callables.py")
 
-def inc_1 (i) :
-    return i + 1
+def my_function (i, j) :
+    return i + j
 
-assert isinstance(inc_1, FunctionType)
-assert hasattr(inc_1, "__call__")
+f = my_function
 
-assert inc_1(2)                    == 3         # function invocation; self -> undefined
-assert list(map(inc_1, [2, 3, 4])) == [3, 4, 5] # function invocation; self -> undefined
+assert isinstance(my_function, FunctionType)
+assert isinstance(f,           FunctionType)
 
-a = [2]
-assert inc_1(*a) == 3 # apply invocation; self -> undefined
+assert hasattr(my_function, "__call__")
+assert hasattr(f,           "__call__")
 
+assert my_function(2, 3) == 5
+assert           f(2, 3) == 5
 
-
-inc_2 = lambda i : i + 1
-assert isinstance(inc_2, LambdaType)
-assert hasattr(inc_2, "__call__")
-
-assert inc_2(2)                    == 3         # function invocation; self -> undefined
-assert list(map(inc_2, [2, 3, 4])) == [3, 4, 5] # function invocation; self -> undefined
-
-a = [2]
-assert inc_2(*a) == 3 # apply invocation; self -> undefined
+assert reduce(my_function, [2, 3, 4], 0) == 9
+assert reduce(f,           [2, 3, 4], 0) == 9
 
 
 
-def make_inc_a () :
-    return lambda i : i + 1
+f = lambda i, j : i + j
 
-inc_3 = make_inc_a()
-assert isinstance(inc_3, LambdaType)
-assert hasattr(inc_3, "__call__")
+assert isinstance(lambda i, j : i + j, FunctionType)
+assert isinstance(f,                   FunctionType)
 
-assert inc_3(2)                    == 3         # function invocation; self -> undefined
-assert list(map(inc_3, [2, 3, 4])) == [3, 4, 5] # function invocation; self -> undefined
+assert hasattr(lambda i, j : i + j, "__call__")
+assert hasattr(f,                   "__call__")
 
-a = [2]
-assert inc_3(*a) == 3 # apply invocation; self -> undefined
+assert (lambda i, j : i + j)(2, 3) == 5
+assert                     f(2, 3) == 5
+
+assert reduce(lambda i, j : i + j, [2, 3, 4], 0) == 9
+assert reduce(f,                   [2, 3, 4], 0) == 9
 
 
 
-def make_inc_b (j) :
+def my_lambda () :
+    return lambda i, j : i + j
+
+f = my_lambda()
+
+assert isinstance(my_lambda(), FunctionType)
+assert isinstance(f,           FunctionType)
+
+assert hasattr(my_lambda(), "__call__")
+assert hasattr(f,           "__call__")
+
+assert my_lambda()(2, 3) == 5
+assert           f(2, 3) == 5
+
+assert reduce(my_lambda(), [2, 3, 4], 0) == 9
+assert reduce(f,           [2, 3, 4], 0) == 9
+
+
+
+i = 2
+f = lambda j : i + j
+
+assert isinstance(lambda j : i + j, FunctionType)
+assert isinstance(f,                FunctionType)
+
+assert hasattr(lambda j : i + j, "__call__")
+assert hasattr(f,                "__call__")
+
+assert (lambda j : i + j)(3) == 5
+assert                  f(3) == 5
+
+assert list(map(lambda j : i + j, [2, 3, 4])) == [4, 5, 6]
+assert list(map(f,                [2, 3, 4])) == [4, 5, 6]
+
+
+
+def my_closure (j) :
     return lambda i : i + j
 
-inc_4 = make_inc_b(1)
-assert isinstance(inc_4, LambdaType)
-assert hasattr(inc_4, "__call__")
+assert isinstance(my_closure(2), FunctionType)
+assert isinstance(f,             FunctionType)
 
-assert inc_4(2)                    == 3         # function invocation; self -> undefined
-assert list(map(inc_4, [2, 3, 4])) == [3, 4, 5] # function invocation; self -> undefined
+assert hasattr(my_closure(2), "__call__")
+assert hasattr(f,             "__call__")
 
-a = [2]
-assert inc_4(*a) == 3 # apply invocation; self -> undefined
+assert my_closure(2)(3) == 5
+assert             f(3) == 5
+
+assert list(map(my_closure(2), [2, 3, 4])) == [4, 5, 6]
+assert list(map(f,             [2, 3, 4])) == [4, 5, 6]
 
 
 
@@ -75,49 +111,49 @@ class A (object) :
     def __init__ (self, j) :
         self.j = j
 
-    def inc (self, i) :
+    def my_method (self, i) :
         return i + self.j
 
-x = A(1)
+x = A(2)
 assert isinstance(x, A)
 
-inc_5 = x.inc
-assert isinstance(inc_5, MethodType)
+f = x.my_method
 
-assert inc_5(2)                    == 3         # function invocation; self -> x
-assert list(map(inc_5, [2, 3, 4])) == [3, 4, 5] # function invocation; self -> x
+assert isinstance(x.my_method, MethodType)
+assert isinstance(f,           MethodType)
 
-a = [2]
-assert inc_5(*a) == 3 # apply invocation; self -> x
+assert x.my_method(3) == 5
+assert f(3)           == 5
 
-
-
-inc_6 = A.inc
-assert isinstance(inc_6, FunctionType)
-
-assert inc_6(x, 2)                                  == 3         # function invocation; self -> x
-assert list(map(lambda y : inc_6(x, y), [2, 3, 4])) == [3, 4, 5] # function invocation; self -> x
-
-a = [x, 2]
-assert inc_6(*a) == 3 # apply invocation; self -> x
+assert list(map(x.my_method, [2, 3, 4])) == [4, 5, 6]
+assert list(map(f,           [2, 3, 4])) == [4, 5, 6]
 
 
 
-class B (object) :
+f = A.my_method
+
+assert isinstance(A.my_method, FunctionType)
+assert isinstance(f,           FunctionType)
+
+assert A.my_method(x, 3) == 5
+assert           f(x, 3) == 5
+
+
+
+class A (object) :
     def __init__ (self, j) :
         self.j = j
 
     def __call__ (self, i) :
         return i + self.j
 
-inc_7 = B(1)
-assert isinstance(inc_7, B)
-assert hasattr(inc_7, "__call__")
+f = A(2)
+assert isinstance(f, A)
 
-assert inc_7(2)                    == 3         # object invocation; self -> inc_7
-assert list(map(inc_7, [2, 3, 4])) == [3, 4, 5] # object invocation; self -> inc_7
+assert hasattr(A(2), "__call__")
+assert hasattr(f,    "__call__")
 
-a = [2]
-assert inc_7(*a) == 3 # apply invocation; self -> inc_7
+assert A(2)(3) == 5
+assert    f(3) == 5
 
 print("Done.")
