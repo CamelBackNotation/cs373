@@ -69,6 +69,7 @@ sync:
     --include "FunctionTuple.py"             \
     --include "FunctionDict.py"              \
     --include "Callables.py"                 \
+    --include "Functions.py"                 \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \

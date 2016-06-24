@@ -20,7 +20,8 @@ FILES :=              \
     FunctionUnpacking \
     FunctionTuple     \
     FunctionDict      \
-    Callables
+    Callables         \
+    Functions
 
 ifeq ($(CI), true)
     PYLINT := pylint
