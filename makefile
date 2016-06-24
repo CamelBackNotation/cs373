@@ -85,8 +85,9 @@ sync:
     --include "RMSET.py"                     \
     --include "Map.py"                       \
     --include "MapT.py"                      \
-    --include "RangeIterator.py"            \
+    --include "RangeIterator.py"             \
     --include "RangeIteratorT.py"            \
+    --include "Range.py"                     \
     --include "RangeT.py"                    \
     --exclude "*"                            \
     ../../exercises/python/ exercises
