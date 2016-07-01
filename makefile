@@ -90,6 +90,7 @@ sync:
     --include "RangeIteratorT.py"            \
     --include "Range.py"                     \
     --include "RangeT.py"                    \
+    --include "Decorators.py"                \
     --include "DecoratorsT.py"               \
     --include "ComplexT.py"                  \
     --include "SelectT.py"                   \
