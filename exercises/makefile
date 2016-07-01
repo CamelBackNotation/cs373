@@ -6,7 +6,8 @@ FILES :=           \
     RMSET          \
     MapT           \
     RangeIteratorT \
-    RangeT
+    RangeT         \
+    DecoratorsT
 
 ifeq ($(CI), true)
     COVERAGE := coverage
