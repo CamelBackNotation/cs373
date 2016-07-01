@@ -4,7 +4,9 @@ FILES :=           \
     FactorialT     \
     ReduceT        \
     RMSET          \
-    Map
+    MapT           \
+    RangeIteratorT \
+    RangeT
 
 ifeq ($(CI), true)
     COVERAGE := coverage

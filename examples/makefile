@@ -21,7 +21,8 @@ FILES :=              \
     FunctionTuple     \
     FunctionDict      \
     Callables         \
-    Functions
+    Functions         \
+    Classes
 
 ifeq ($(CI), true)
     PYLINT := pylint
