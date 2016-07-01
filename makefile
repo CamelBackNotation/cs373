@@ -92,6 +92,7 @@ sync:
     --include "RangeT.py"                    \
     --include "Decorators.py"                \
     --include "DecoratorsT.py"               \
+    --include "Complex.py"                  \
     --include "ComplexT.py"                  \
     --include "SelectT.py"                   \
     --include "ProjectT.py"                  \
