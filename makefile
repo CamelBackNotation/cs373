@@ -91,6 +91,7 @@ sync:
     --include "Range.py"                     \
     --include "RangeT.py"                    \
     --include "DecoratorsT.py"               \
+    --include "ComplexT.py"                  \
     --include "SelectT.py"                   \
     --include "ProjectT.py"                  \
     --include "CrossJoinT.py"                \
