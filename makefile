@@ -71,6 +71,7 @@ sync:
     --include "Callables.py"                 \
     --include "Functions.py"                 \
     --include "Classes.py"                   \
+    --include "Closures.py"                  \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -92,7 +93,7 @@ sync:
     --include "RangeT.py"                    \
     --include "Decorators.py"                \
     --include "DecoratorsT.py"               \
-    --include "Complex.py"                  \
+    --include "Complex.py"                   \
     --include "ComplexT.py"                  \
     --include "SelectT.py"                   \
     --include "ProjectT.py"                  \
