@@ -16,7 +16,7 @@ def f (x, y, z) :
 t = (3, 4)
 assert f(2, 5, t) == [2, 5, (3, 4)]
 assert f(2, *t)   == [2, 3, 4]
-assert f(*t,  2)  == [2, 3, 4]
+assert f(*t,  2)  == [3, 4, 2]
 assert f(z=2, *t) == [3, 4, 2]
 assert f(*t, z=2) == [3, 4, 2]
 
