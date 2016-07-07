@@ -7,7 +7,11 @@ FILES :=           \
     MapT           \
     RangeIteratorT \
     RangeT         \
-    DecoratorsT
+    DecoratorsT    \
+    ComplexT       \
+    SelectT        \
+    ProjectT       \
+    CrossJoinT
 
 ifeq ($(CI), true)
     COVERAGE := coverage
