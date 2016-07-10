@@ -72,6 +72,7 @@ sync:
     --include "Functions.py"                 \
     --include "Classes.py"                   \
     --include "Closures.py"                  \
+    --include "RegExps.py"                   \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
