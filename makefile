@@ -73,6 +73,8 @@ sync:
     --include "Classes.py"                   \
     --include "Closures.py"                  \
     --include "RegExps.py"                   \
+    --include "Reflection.py"                \
+    --include "Store9.py"                    \
     --exclude "*"                            \
     ../../examples/python/ examples
 	@rsync -r -t -u -v --delete              \
@@ -88,6 +90,32 @@ sync:
     --include "Bookstore.schema.json"        \
     --exclude "*"                            \
     ../../examples/json/ examples
+	@rsync -r -t -u -v --delete              \
+    --include "ShowDatabases.sql"            \
+    --include "ShowEngines.sql"              \
+    --include "Create.sql"                   \
+    --include "Select.sql"                   \
+    --include "Join.sql"                     \
+    --include "Subqueries.sql"               \
+    --include "Aggregation.sql"              \
+    --exclude "*"                            \
+    ../../examples/sql/ examples
+	@rsync -r -t -u -v --delete              \
+    --include "Store1.java"                  \
+    --include "Store2.java"                  \
+    --include "Store3.java"                  \
+    --include "Store4.java"                  \
+    --include "Store5.java"                  \
+    --include "Store6.java"                  \
+    --include "MethodOverriding1.java"       \
+    --include "MethodOverriding2.java"       \
+    --include "DynamicBinding.java"          \
+    --include "Store7.java"                  \
+    --include "Reflection.java"              \
+    --include "Store8.java"                  \
+    --include "Store9.java"                  \
+    --exclude "*"                            \
+    ../../examples/java/ examples
 	@rsync -r -t -u -v --delete              \
     --include "IsPrime1.py"                  \
     --include "IsPrime1T.py"                 \
