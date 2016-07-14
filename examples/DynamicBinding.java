@@ -9,11 +9,13 @@ class A {
     public String f2 () {
         return "A.f2";}
 
+
     public String g1 () {
         return g2();}
 
     protected String g2 () {
         return "A.g2";}
+
 
     public String h1 () {
         return h2();}
