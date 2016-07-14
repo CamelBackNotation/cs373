@@ -150,6 +150,10 @@ sync:
     --exclude "*"                            \
     ../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \
+    --include "SingletonPatternT.java"       \
+    --exclude "*"                            \
+    ../../patterns/java/ exercises
+	@rsync -r -t -u -v --delete              \
     --include "Collatz.py"                   \
     --include "RunCollatz.in"                \
     --include "RunCollatz.py"                \
