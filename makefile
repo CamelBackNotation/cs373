@@ -151,6 +151,8 @@ sync:
     ../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \
     --include "SingletonPattern.java"        \
+    --include "CreationalPattern.java"       \
+    --include "FactoryMethodPattern.java"    \
     --exclude "*"                            \
     ../../patterns/java/ exercises
 	@rsync -r -t -u -v --delete              \
