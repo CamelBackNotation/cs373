@@ -81,6 +81,7 @@ select * from College;
 #     from Student, Apply
 #     order by Student.sID;
 
+select "*** #1 ***";
 select *
     from Student cross join Apply
     order by Student.sID;
@@ -95,22 +96,29 @@ select *
 #     from Student
 #     inner join Apply on Student.sID = Apply.sID;
 
+select "*** #2 ***";
 select *
     from Student
     inner join Apply using (sID);
 
 # ------------------------------------------------------------------------
+select "*** #3 ***";
 select *
     from Student
     inner join Apply using (sID)
-    where (sizeHS > 1000) and (major = 'CS') and (decision = false);
+    where (sizeHS   > 1000)   and
+          (major    = 'CS')   and
+          (decision = false);
 
 select sName, GPA
     from Student
     inner join Apply using (sID)
-    where (sizeHS > 1000) and (major = 'CS') and (decision = false);
+    where (sizeHS   > 1000)   and
+          (major    = 'CS')   and
+          (decision = false);
 
 # ------------------------------------------------------------------------
+select "*** #4 ***";
 select *
     from Student
         inner join Apply   using (sID)

@@ -77,6 +77,7 @@ select * from Apply;
 select * from College;
 
 # ------------------------------------------------------------------------
+select "*** #1 ***";
 select "*** stats on GPA of students ***";
 
 select *
@@ -101,6 +102,7 @@ select sum(GPA)
     from Student;
 
 # ------------------------------------------------------------------------
+select "*** #2 ***";
 select "*** stats on GPA of students applying to CS ***";
 
 select *
@@ -139,6 +141,7 @@ select sum(GPA)
     order by GPA desc;
 
 # ------------------------------------------------------------------------
+select "*** #3 ***";
 select "*** number of colleges with enrollment > 15000 ***";
 
 select *
@@ -155,6 +158,7 @@ select count(*)
     where enrollment > 15000;
 
 # ------------------------------------------------------------------------
+select "*** #4 ***";
 select "*** number of students who applied to Cornell ***";
 
 select "this is not right, because of duplicates";
@@ -178,6 +182,7 @@ select count(distinct sID)
     where cName = "Cornell";
 
 # ------------------------------------------------------------------------
+select "*** #5 ***";
 select "*** students, such that ***";
 select "*** the number of other students with the same GPA equals ***";
 select "*** the number of other students with the same high school size ***";
@@ -195,6 +200,7 @@ select *
     order by sID;
 
 # ------------------------------------------------------------------------
+select "*** #6 ***";
 select "*** amount by which the average GPA of students applying to CS ***";
 select "*** exceeds the average GPA of students not applying to CS ***";
 
@@ -229,6 +235,7 @@ select R.gpa - S.gpa
                         where major = 'CS')) as S;
 
 # ------------------------------------------------------------------------
+select "*** #7 ***";
 select "*** number of applications to each college ***";
 
 select *
@@ -248,6 +255,7 @@ select cName, count(*)
     group by cName;
 
 # ------------------------------------------------------------------------
+select "*** #8 ***";
 select "*** number of students who applied to each college ***";
 
 select *
@@ -263,6 +271,7 @@ select cName, count(distinct sID)
     group by cName;
 
 # ------------------------------------------------------------------------
+select "*** #9 ***";
 select "*** stats on college enrollment by state ***";
 
 select *
@@ -286,6 +295,7 @@ select state, sum(enrollment)
     group by state;
 
 # ------------------------------------------------------------------------
+select "*** #10 ***";
 select "*** stats on GPA of applicants to each college and major ***";
 
 select *

@@ -77,6 +77,7 @@ select * from Apply;
 select * from College;
 
 # ------------------------------------------------------------------------
+select "*** #1 ***";
 select "*** ID, name, and GPA of students who applied in CS ***";
 
 select "this is not right, why?";
@@ -103,6 +104,7 @@ select sID, sName, GPA
             where major = 'CS');
 
 # ------------------------------------------------------------------------
+select "*** #2 ***";
 select "*** GPA of students who applied in CS ***";
 
 select "this is not right, why?";
@@ -132,6 +134,7 @@ select GPA
     order by GPA desc;
 
 # ------------------------------------------------------------------------
+select "*** #3 ***";
 select "*** ID of students who have applied in CS but not in EE ***";
 
 select "this is not right, why?";
@@ -162,6 +165,7 @@ select distinct sID
         sID not in (select sID from Apply where major = 'EE');
 
 # ------------------------------------------------------------------------
+select "*** #4 ***";
 select "*** colleges with another college in the same state ***";
 
 select "using inner join";
@@ -193,6 +197,7 @@ select cName, state
             having count(State) > 1) as T;
 
 # ------------------------------------------------------------------------
+select "*** #5 ***";
 select "*** colleges with highest enrollment ***";
 
 select "using subquery, with not exists";
@@ -213,6 +218,7 @@ select cName, enrollment
             from College);
 
 # ------------------------------------------------------------------------
+select "*** #6 ***";
 select "*** students with highest GPA ***";
 
 select "this is not right, why?";

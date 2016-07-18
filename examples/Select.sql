@@ -77,30 +77,36 @@ select * from Apply;
 select * from College;
 
 # ------------------------------------------------------------------------
+select "*** #1 ***";
 select *
     from Student
     where (GPA > 3.7);
 
 # ------------------------------------------------------------------------
+select "*** #2 ***";
 select *
     from Student
     where (GPA > 3.7) and (sizeHS < 1000);
 
 # ------------------------------------------------------------------------
+select "*** #3 ***";
 select *
     from Apply
     where (cName = 'Stanford') and (major = 'CS');
 
 # ------------------------------------------------------------------------
+select "*** #4 ***";
 select sID, decision
     from Apply;
 
 # ------------------------------------------------------------------------
+select "*** #5 ***";
 select sID, sName
     from Student
     where (GPA > 3.7);
 
 # ------------------------------------------------------------------------
+select "*** #6 ***";
 select major, decision
     from Apply
     order by major;

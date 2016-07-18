@@ -143,14 +143,14 @@ sync:
     --include "ProjectT.py"                  \
     --include "CrossJoin.py"                 \
     --include "CrossJoinT.py"                \
-    --include "ThetaJoin.py"                \
+    --include "ThetaJoin.py"                 \
     --include "ThetaJoinT.py"                \
-    --include "NaturalJoin.py"              \
+    --include "NaturalJoin.py"               \
     --include "NaturalJoinT.py"              \
     --exclude "*"                            \
     ../../exercises/python/ exercises
 	@rsync -r -t -u -v --delete              \
-    --include "SingletonPatternT.java"       \
+    --include "SingletonPattern.java"        \
     --exclude "*"                            \
     ../../patterns/java/ exercises
 	@rsync -r -t -u -v --delete              \
