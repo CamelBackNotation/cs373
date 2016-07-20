@@ -39,7 +39,7 @@ public final class SingletonPattern extends TestCase {
     	assertEquals(Eager.only(), Eager.only());}
 
     public void test_2 () {
-    	assertEquals( "Eager.f()", Eager.only().f());}
+    	assertEquals("Eager.f()", Eager.only().f());}
 
     public void test_3 () {
     	assertEquals(Lazy.only(), Lazy.only());}

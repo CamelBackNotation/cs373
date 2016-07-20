@@ -309,6 +309,7 @@ select cName, major, avg(GPA), max(GPA), min(GPA), max(GPA) - min(GPA)
     group by cName, major;
 
 # ------------------------------------------------------------------------
+select "*** #11 ***";
 select "*** max spread between min and max GPA of applicants ***";
 select "*** to each college and major ***";
 
@@ -334,6 +335,7 @@ select cName, major, avg(GPA), max(GPA), min(GPA), max(GPA) - min(GPA)
 					group by cName, major) as T);
 
 # ------------------------------------------------------------------------
+select "*** #12 ***";
 select "*** number of colleges applied to by each student ***";
 
 select "does not include student who did not apply anywhere";
@@ -368,6 +370,7 @@ select sID, sName, 0 as count_cName
 order by count_cName desc;
 
 # ------------------------------------------------------------------------
+select "*** #13 ***";
 select "*** colleges with fewer than 5 applications ***";
 
 select cName, count(*)
@@ -380,6 +383,7 @@ select cName, count(*)
     having count(*) < 5;
 
 # ------------------------------------------------------------------------
+select "*** #14 ***";
 select "*** colleges with fewer than 5 applicants ***";
 
 select cName, count(distinct sID)
@@ -392,6 +396,7 @@ select cName, count(distinct sID)
     having count(distinct sID) < 5;
 
 # ------------------------------------------------------------------------
+select "*** #15 ***";
 select "*** majors whose applicant's max GPA is less than the average ***";
 
 select avg(GPA)
